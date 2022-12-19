@@ -302,7 +302,10 @@ jQuery(document).ready(function($) {
       e.preventDefault();
 
       var hash = this.hash;
-
+	  if(hash){
+		$(this).parent().addClass('active')
+		$(this).parent().siblings().removeClass('active')
+	  }
       $('html, body').animate({
         'scrollTop': $(hash).offset().top
       }, 600, 'easeInOutCirc', function(){
